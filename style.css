@@ -1,0 +1,23 @@
+.page{
+	font-family: Helvetica;
+}
+
+.header {
+}
+
+.nav-bar{
+	display: flex;
+}
+.nav-bar > div{
+	padding: 10px;
+}
+
+.main-body{
+	display: flex;
+}
+
+.caption{
+	padding: 10px;
+	text-align: justify;
+	background-color: lightblue;
+}
