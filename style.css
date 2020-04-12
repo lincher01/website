@@ -1,5 +1,6 @@
 .page{
 	font-family: Helvetica;
+	background-color: #FBEEC1;
 }
 
 .header {
@@ -12,12 +13,54 @@
 	padding: 10px;
 }
 
-.main-body{
+.parent{
+	display: grid;
+	padding: 10px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1rem;
+
+}
+.child{
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.vparent{
+	display: inline-block;
+	padding: 10px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1rem;
+}
+
+.child img{
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: auto;
+	width: 300px;
+	transform: translate(-50%, -50%);
+}
+.Limage{
 	display: flex;
 }
 
 .caption{
 	padding: 10px;
 	text-align: justify;
-	background-color: lightblue;
+}
+
+.tab{
+
+}
+.tab button{
+
+}
+.tab button.active{
+	background-color: #ccc;
+}
+.tabcontent{
+	display: none;
 }
