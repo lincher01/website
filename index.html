@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
+<meta name = "viewport" content = "width=device-width, inital-scale = 1">
 <head>
 	<title>Welcome</title>
 </head>
  <link rel= "stylesheet" type="text/css" href="style.css">
- <script type="text/javascript" src= "func.js"></script>
-<body class = "page">
-	<div class = "header">
-		<h1>Hello World!</h1>
+ <script type="text/javascript" src= "func.js">
+ </script>
+<body class = "page" style="color:white">
+	<div class = "header" style="display: block">
+	</div>
+	<div class="profile" style="display: block">
+	</div>
+	<div class="Name">
+		<p>Cher Lin</p>
+	</div>
+	<div class="bio-bar">
+		<div class="bio">
+			<p>Cell: (651) 431-1904</p>
+			<p>Email: cher@ucsb.edu</p>
+			<p>Santa Barbara, CA</p>
+		</div>
 	</div>
 	<div class = "nav-bar">
-		<div class = "tabs">
+		<div class = "tab">
 			<!--home-->
-			<button class = "tablinks" onclick = "opentab(event, 'home')">Home</button>
+			<button class = "tablinks active" onclick = "opentab(event, 'home')">Home</button>
 			<!--images-->
 			<button class ="tablinks" onclick ="opentab(event, 'images')">Images</button>
 			<!--Videos-->
@@ -21,91 +34,118 @@
 			<button class ="tablinks" onclick ="opentab(event, 'links')">Links</button>
 		</div>
 	</div>
-		<!--home-->
-		<div id = "home" class = "tabcontent" style="display: block">
-			<p> 
-				When your code finally works and you slowly lift your hands away from the keyboard and stare at the screen in confusion because that definitely should not have worked...
-			</p>
-			<div>
-				<img src="images/raccoon.jpg">
-			</div>
+	<!--home-->
+	<div id = "home" class = "tabcontent" style="display: block">
+		<p> 
+			When your code finally works and you slowly lift your hands away from the keyboard and stare at the screen in confusion because that definitely should not have worked...
+		</p>
+		<div>
+			<img src="images/raccoon.jpg" style="max-width:100%;height:auto">
 		</div>
+	</div>
 
 		<!--images-->
-		<div id = "images" class = "tabcontent">
-			<h3>Images</h3>
-			<p>These pictures are a good representation of my CS journey</p>
-			<div class = "parent">
-				<div class = "child">
-					<img src = "images/cat.jpg"> 
-				</div>
-				<div class = "child">
-					<img src = "images/elmo.PNG"> 
-				</div>
-				<div class = "child">
-					<img src = "images/lunch.jpg"> 
-				</div>
-				<div class = "child">
-					<img src = "images/sands.jpg"> 
-				</div>
-				<div class = "child">
-					<img src = "images/SBupset.jpg"> 
-				</div>
-				<div class = "child">
-					<img src="images/secrets.JPG">
-				</div>
+	<div id = "images" class = "tabcontent">
+		<p>These pictures are a good representation of my CS journey</p>
+		<div class= "row">
+			<div class = "column">
+				<img src="images/cat.jpg" onclick="openModal();currentImg(1)">
+				<img src="images/elmo.PNG" onclick="openModal();currentImg(2)">
+			</div>
+			<div class = "column">
+				<img src="images/lunch.jpg" onclick="openModal();currentImg(3)">
+				<img src="images/sands.jpg" onclick="openModal();currentImg(4)">
+			</div>
+			<div class = "column">
+				<img src="images/p.PNG" onclick="openModal();currentImg(5)">
+				<img src="images/IMG_1557.JPEG" onclick="openModal();currentImg(6)">
+			</div>
+			<div class = "column">
+				<img src="images/SBupset.jpg" onclick="openModal();currentImg(7)">
+				<img src="images/secrets.JPG" onclick="openModal();currentImg(8)">
 			</div>
 		</div>
-
-		<!-- videos -->
-		<div id = "Videos" class = "tabcontent">
-			<h3>Videos</h3>
-			<div class = "vparent">
-				<div class= "Limage">
-					<video width = "560" height= "315" controls>
-						<source src="vid/rfid.mp4" type="video/mp4">
+		<div id="myModal" class="modal" onclick="closeModal()">
+			<div class = "modal-content">
+				<div class="mySlides">
+      				<img src="images/cat.jpg" style="width:100%">
+      			</div>
+      			<div class="mySlides">
+      				<img src="images/elmo.PNG" style="width:100%">
+      			</div>
+      			<div class="mySlides">
+      				<img src="images/lunch.jpg"style="width:100%">
+      			</div>
+      			<div class="mySlides">
+      				<img src="images/sands.jpg" style="width:100%">
+      			</div>
+      			<div class="mySlides">
+      				<img src="images/p.PNG" style="width:100%">
+      			</div>
+      			<div class="mySlides">
+      				<img src="images/IMG_1557.JPEG" style="width:100%">
+      			</div>
+      			<div class="mySlides">
+      				<img src="images/SBupset.jpg" style="width:100%">
+      			</div>
+      			<div class="mySlides">
+      				<img src="images/secrets.jpg" style="width:100%">
+      			</div>
+      		</div>
+      	</div>
+    </div>
+			</div>
+		</div>
+	</div>
+	<!-- videos -->
+	<div id = "Videos" class = "tabcontent">
+		<div class = "vparent">
+			<div class= "Limage">
+				<video width = "560" height= "315" controls>
+					<source src="vid/rfid.mp4" type="video/mp4">
 						Your browswer does not support the video tag
-					</video>
-					<p class = "caption">
-						ECE 153 project using an RFID and Bluetooth to increase door security. I tried to put the entire video but github won't take vide's that are greater than 100MB I guess :(
-					</p>
-				</div>
-				<div class = "Limage">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/oJIkBSaGiG0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-					</iframe>
-					<p class ="caption">a good song :)
-					</p>
-				</div>
+				</video>
+				<p class = "caption">
+					ECE 153 project using an RFID and Bluetooth to increase door security. I tried to put the entire video but github won't take vide's that are greater than 100MB I guess :(
+				</p>
+			</div>
+			<div class = "Limage">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/oJIkBSaGiG0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+				</iframe>
+				<p class ="caption">a good song :)
+				</p>
 			</div>
 		</div>
+	</div>
 
 		<!-- links -->
-		<div id = "links" class = "tabcontent">
-			<h3>Links</h3>
-			<div class = "Limage">
-				<a href="https://www.youtube.com/watch?v=MIhNXrOuX5A&feature=emb_title">
-					<img width = 300px src="images/day3.jpg">
-				</a>
-				<p class = caption>
-					It's only my 1st voluntary cs class out here ¯\_(ツ)_/¯ 
-				</p>
-			</div>
-			<div class ="Limage">
-				<a href="https://github.com">
-					<img width= 300px src="images/p.png">
-				</a>
-				<p class = caption>
-					me everytime bash won't let me push to github because I forgot to pull the updates my friends have made to our project.
-				</p>
-			</div>
-			<div class= "Limage">
-				<a href="https://sites.google.com/view/front-door-securtiy/">
-					<img width = 300px src="images/visual.JPG">
-				</a>
-				<p class="caption">
-					Website of the ECE 153 project I did with my roommate.
-				</p>
-			</div>
+	<div id = "links" class = "tabcontent">
+		<div class = "Limage">
+			<a href="https://www.youtube.com/watch?v=MIhNXrOuX5A&feature=emb_title">
+				<img width = 300px src="images/day3.jpg" style="max-width:100%;height:auto">
+			</a>
+			<p class = caption>
+				It's only my 1st voluntary cs class out here ¯\_(ツ)_/¯ 
+			</p>
 		</div>
+		<div class ="Limage">
+			<a href="https://github.com">
+				<img width= 300px src="images/p.png" style="max-width:100%;height:auto">
+			</a>
+			<p class = caption>
+				me everytime bash won't let me push to github because I forgot to pull the updates my friends have made to our project.
+			</p>
+		</div>
+		<div class= "Limage">
+			<a href="https://sites.google.com/view/front-door-securtiy/">
+				<img width = 300px src="images/visual.JPG" style="max-width:100%;height:auto">
+			</a>
+			<p class="caption">
+				Website of the ECE 153 project I did with my roommate.
+			</p>
+		</div>
+	</div>
+	<!-- Back to top button -->
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
 </body>
 </html>
